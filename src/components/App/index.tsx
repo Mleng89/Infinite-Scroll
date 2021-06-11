@@ -29,6 +29,7 @@ function App() {
             })}
             <button onClick={loop}>hello?</button>
             <div>
+                hi
                 {Data.map(el => {
                     return <img src={el.images.orig.url} />;
                 })}
