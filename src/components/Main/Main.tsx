@@ -1,5 +1,9 @@
 import React from 'react';
 import Data from '../../data/nyc_ttp_pins.json';
+/*
+//using node.js to access .json
+const data = require('../../data/nyc_ttp_pins.json');
+*/
 export default function Main() {
     // console.log('what is my data', data[2].images);
     console.log('do i have a dataget?', Data);
