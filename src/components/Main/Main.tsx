@@ -1,11 +1,14 @@
 import React from 'react';
 import Data from '../../data/nyc_ttp_pins.json';
+import Header from '../Header';
+import Card from '../Card';
 /*
 //using node.js to access .json
 const data = require('../../data/nyc_ttp_pins.json');
 */
 export default function Main() {
     // console.log('what is my data', data[2].images);
+
     console.log('do i have a dataget?', Data);
     function loop() {
         console.log('length of data:', Data.length);
@@ -22,16 +25,21 @@ export default function Main() {
     // }
     return (
         <>
-            <h1>Info:</h1>
-            {Data.map(el => {
-                return <p>{el.id} </p>;
-            })}
-            <button onClick={loop}>hello?</button>
+            <Header />
+
             <div>
-                hi
-                {Data.map(el => {
-                    return <img src={el.images.orig.url} />;
-                })}
+                hi - Pins:
+                <div>
+                    {Data.map(el => {
+                        return (
+                            <Card
+                                title={el.title}
+                                imgUrl={el.images.orig.url}
+                                key={el.id}
+                            />
+                        );
+                    })}
+                </div>
             </div>
         </>
     );
