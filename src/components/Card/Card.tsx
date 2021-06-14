@@ -3,10 +3,16 @@ import styled from 'styled-components';
 const PinCard = styled.div`
     display: grid;
 `;
+const PinImage = styled.img`
+    border-radius: 50px;
+    &:hover {
+        filter: grayscale(100%);
+    }
+`;
 const Card = pin => {
     return (
         <PinCard>
-            <img src={pin.imgUrl} />
+            <PinImage src={pin.imgUrl} />
             <h2>{pin.title}</h2>
         </PinCard>
     );
