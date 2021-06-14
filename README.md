@@ -15,4 +15,12 @@ npm run dev
 ## Scripts
 `npm run dev` will run the development server for the project.
 
+## Dependencies 
+- @types/react
+- @types/react-dom
+- react
+- react-dom
+- styled-components
+- typescript
+
 #### Bootstrapped from my [react-typescript-boilerplate](https://github.com/Mleng89/react-typescript-boilerplate)
