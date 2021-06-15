@@ -5,7 +5,6 @@ import PinterestIcon from '@material-ui/icons/Pinterest';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MessageIcon from '@material-ui/icons/Message';
-import SearchIcon from '@material-ui/icons/Search';
 export default function Header() {
     const [searchValue, setSearchValue] = useState('');
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -13,7 +12,6 @@ export default function Header() {
     };
     return (
         <NavContainer>
-            {/* <StickyHeader> */}
             <NavButtons>
                 <PinterestIcon htmlColor="red" fontSize="large" />
             </NavButtons>
@@ -39,7 +37,6 @@ export default function Header() {
             <NavButtons>
                 <ExpandMoreIcon fontSize="large" />
             </NavButtons>
-            {/* </StickyHeader> */}
         </NavContainer>
     );
 }
@@ -53,7 +50,6 @@ const NavContainer = styled.div`
     align-items: center;
     z-index: 1;
 `;
-const StickyHeader = styled.div``;
 
 const NavButtons = styled.div`
     display: flex;
@@ -86,7 +82,7 @@ const SearchBar = styled.input`
     background-color: #f5f5f5;
     &:hover,
     &:focus {
-        border: 1.5px solid #094067;
+        border: 1.5px solid #000;
         background-color: white;
     }
 `;

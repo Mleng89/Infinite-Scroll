@@ -14,18 +14,18 @@ export default function Main() {
     const hasMoreData = pins.length < Infinity;
 
     //RANDOMIZE JSON DATA
-    // const newData = arr => {
-    //     arr.sort(() => Math.random() - 0.5);
-    // };
-    // newData(Data);
+    const newData = arr => {
+        arr.sort(() => Math.random() - 0.5);
+    };
+    newData(Data);
 
     //FUNCTION TO RUN ONCE onBottom IS TRUE
     const loadMorePins = () => {
-        setPage(pages => page + 1);
+        setPage(pages => pages + 1);
         setLoading(true);
         setTimeout(() => {
-            const newPins = new Array(Data).fill(Data).map(Data => Data);
-            setPins([...pins, ...newPins[0]]);
+            const newPins = Data;
+            setPins([...pins, ...newPins]);
             setLoading(false);
         }, 2000);
     };
@@ -38,13 +38,17 @@ export default function Main() {
                     hasMoreData={hasMoreData}
                     isLoading={loading}
                     onBottom={loadMorePins}
-                    onLoad={true}
+                    onLoad={false}
                 >
                     <div>
                         {pins.map(el => {
                             return (
                                 <Card
-                                    title={el.title}
+                                    title={
+                                        el.title
+                                            ? el.title
+                                            : 'An adorable feline'
+                                    }
                                     imgUrl={el.images.orig.url}
                                     key={Math.random() * 0.5}
                                 />
@@ -53,7 +57,9 @@ export default function Main() {
                     </div>
                 </InfiniteScroll>
             </MainWrapper>
-            <div>{loading && <CircularProgress />}</div>
+            <LoadingAnimate>
+                {loading && <CircularProgress />}Loading more pins!
+            </LoadingAnimate>
         </>
     );
 }
@@ -61,4 +67,8 @@ export default function Main() {
 const MainWrapper = styled.div`
     margin-top: 1em;
     margin-left: 5em;
+`;
+
+const LoadingAnimate = styled.div`
+    font-size: xx-large;
 `;
