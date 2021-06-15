@@ -1,40 +1,59 @@
-import React from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import Data from '../../data/nyc_ttp_pins.json';
 import Header from '../Header';
 import Card from '../Card';
 import styled from 'styled-components';
-/*
-//using node.js to access .json
-const data = require('../../data/nyc_ttp_pins.json');
-*/
-export default function Main() {
-    console.log('do i have a dataget?', Data);
+import InfiniteScroll from '../InfiniteScroll';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
-    // function fetchData() {
-    //     fetch(getData)
-    //         .then(res => res.json())
-    //         .then(json => console.log(json))
-    //         .catch(err => console.error('error:', err));
-    // }
+export default function Main() {
+    const [pins, setPins] = useState(Data);
+    const [loading, setLoading] = useState(false);
+    const [page, setPage] = useState(0);
+
+    const hasMoreData = pins.length < Infinity;
+
+    //RANDOMIZE JSON DATA
+    // const newData = arr => {
+    //     arr.sort(() => Math.random() - 0.5);
+    // };
+    // newData(Data);
+
+    //FUNCTION TO RUN ONCE onBottom IS TRUE
+    const loadMorePins = () => {
+        setPage(pages => page + 1);
+        setLoading(true);
+        setTimeout(() => {
+            const newPins = new Array(Data).fill(Data).map(Data => Data);
+            setPins([...pins, ...newPins[0]]);
+            setLoading(false);
+        }, 2000);
+    };
+
     return (
         <>
             <Header />
             <MainWrapper>
-                <div>
-                    hi - Pins:
+                <InfiniteScroll
+                    hasMoreData={hasMoreData}
+                    isLoading={loading}
+                    onBottom={loadMorePins}
+                    onLoad={true}
+                >
                     <div>
-                        {Data.map(el => {
+                        {pins.map(el => {
                             return (
                                 <Card
                                     title={el.title}
                                     imgUrl={el.images.orig.url}
-                                    key={el.id}
+                                    key={Math.random() * 0.5}
                                 />
                             );
                         })}
                     </div>
-                </div>
+                </InfiniteScroll>
             </MainWrapper>
+            <div>{loading && <CircularProgress />}</div>
         </>
     );
 }
