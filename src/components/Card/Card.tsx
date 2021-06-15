@@ -4,6 +4,8 @@ import styled from 'styled-components';
 const PinWrap = styled.div`
     display: inline-flex;
     padding: 8px;
+    position: relative;
+    overflow: hidden;
 `;
 const PinCard = styled.div`
     display: flex;
@@ -22,14 +24,27 @@ const PinCard = styled.div`
         }
     }
 `;
+const PinTitle = styled(PinWrap)`
+    color: #000000;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    position: absolute;
+    top: 80%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    font-size: large;
+    &:hover {
+        filter: grayscale(100%);
+    }
+`;
 
 const Card = pin => {
     return (
         <PinWrap>
             <PinCard>
                 <img src={pin.imgUrl} />
-                <h2>{pin.title}</h2>
             </PinCard>
+            <PinTitle>{pin.title}</PinTitle>
         </PinWrap>
     );
 };

@@ -14,14 +14,14 @@ export default function Main() {
     const hasMoreData = pins.length < Infinity;
 
     //RANDOMIZE JSON DATA
-    // const newData = arr => {
-    //     arr.sort(() => Math.random() - 0.5);
-    // };
-    // newData(Data);
+    const newData = arr => {
+        arr.sort(() => Math.random() - 0.5);
+    };
+    newData(Data);
 
     //FUNCTION TO RUN ONCE onBottom IS TRUE
     const loadMorePins = () => {
-        setPage(pages => page + 1);
+        setPage(pages => pages + 1);
         setLoading(true);
         setTimeout(() => {
             const newPins = new Array(Data).fill(Data).map(Data => Data);
@@ -44,7 +44,11 @@ export default function Main() {
                         {pins.map(el => {
                             return (
                                 <Card
-                                    title={el.title}
+                                    title={
+                                        el.title
+                                            ? el.title
+                                            : 'An adorable feline'
+                                    }
                                     imgUrl={el.images.orig.url}
                                     key={Math.random() * 0.5}
                                 />
