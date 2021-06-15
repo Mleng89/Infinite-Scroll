@@ -5,15 +5,26 @@ import PinterestIcon from '@material-ui/icons/Pinterest';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MessageIcon from '@material-ui/icons/Message';
+import Dialog from '@material-ui/core/Dialog';
 export default function Header() {
     const [searchValue, setSearchValue] = useState('');
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setSearchValue(e.target.value);
     };
     return (
         <NavContainer>
             <NavButtons>
-                <PinterestIcon htmlColor="red" fontSize="large" />
+                <a href="/">
+                    <PinterestIcon htmlColor="red" fontSize="large" />
+                </a>
             </NavButtons>
             <HomeLink>Home</HomeLink>
             <SearchContainer>
@@ -26,16 +37,50 @@ export default function Header() {
             </SearchContainer>
 
             <NavButtons>
-                <NotificationsIcon fontSize="large" />
+                <NotificationsIcon
+                    htmlColor="black"
+                    fontSize="large"
+                    onClick={handleOpen}
+                />
+                <Dialog
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="simple-modal-title"
+                    aria-describedby="simple-modal-description"
+                >
+                    <DialogPopup>
+                        Hello!
+                        <br />
+                        This is a mock up of Pinterest in order to display an
+                        infinite-scroll feature.
+                        <br />
+                        You can scroll down indefinitely and see pictures of
+                        adorable felines!
+                    </DialogPopup>
+                </Dialog>
             </NavButtons>
             <NavButtons>
-                <MessageIcon fontSize="large" />
+                <a href="http://mleng.dev/" target="_blank" rel="noreferrer">
+                    <MessageIcon htmlColor="black" fontSize="large" />
+                </a>
             </NavButtons>
             <NavButtons>
-                <AccountCircleIcon fontSize="large" />
+                <a
+                    href="https://www.linkedin.com/in/matthew-leng/"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <AccountCircleIcon htmlColor="black" fontSize="large" />
+                </a>
             </NavButtons>
             <NavButtons>
-                <ExpandMoreIcon fontSize="large" />
+                <a
+                    href="https://github.com/Mleng89/TTP-Pinterest"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <ExpandMoreIcon htmlColor="black" fontSize="large" />
+                </a>
             </NavButtons>
         </NavContainer>
     );
@@ -85,4 +130,9 @@ const SearchBar = styled.input`
         border: 1.5px solid #000;
         background-color: white;
     }
+`;
+const DialogPopup = styled.p`
+    font-size: xx-large;
+    text-align: center;
+    padding: 1em;
 `;
