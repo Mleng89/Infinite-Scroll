@@ -24,8 +24,8 @@ export default function Main() {
         setPage(pages => pages + 1);
         setLoading(true);
         setTimeout(() => {
-            const newPins = new Array(Data).fill(Data).map(Data => Data);
-            setPins([...pins, ...newPins[0]]);
+            const newPins = Data;
+            setPins([...pins, ...newPins]);
             setLoading(false);
         }, 2000);
     };
@@ -38,7 +38,7 @@ export default function Main() {
                     hasMoreData={hasMoreData}
                     isLoading={loading}
                     onBottom={loadMorePins}
-                    onLoad={true}
+                    onLoad={false}
                 >
                     <div>
                         {pins.map(el => {
@@ -57,7 +57,9 @@ export default function Main() {
                     </div>
                 </InfiniteScroll>
             </MainWrapper>
-            <div>{loading && <CircularProgress />}</div>
+            <LoadingAnimate>
+                {loading && <CircularProgress />}Loading more pins!
+            </LoadingAnimate>
         </>
     );
 }
@@ -65,4 +67,8 @@ export default function Main() {
 const MainWrapper = styled.div`
     margin-top: 1em;
     margin-left: 5em;
+`;
+
+const LoadingAnimate = styled.div`
+    font-size: xx-large;
 `;
