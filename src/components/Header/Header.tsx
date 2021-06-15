@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from 'react';
-import { HashRouter as Router } from 'react-router-dom';
+import { HashRouter as Router, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import PinterestIcon from '@material-ui/icons/Pinterest';
@@ -24,9 +24,9 @@ export default function Header() {
         <Router>
             <NavContainer>
                 <NavButtons>
-                    <a href="/">
+                    <NavLink activeClassName="is-active" exact={true} to="/">
                         <PinterestIcon htmlColor="red" fontSize="large" />
-                    </a>
+                    </NavLink>
                 </NavButtons>
 
                 <HomeLink>Home</HomeLink>
