@@ -22,5 +22,6 @@ npm run dev
 - react-dom
 - styled-components
 - typescript
+- Material-UI
 
 #### Bootstrapped from my [react-typescript-boilerplate](https://github.com/Mleng89/react-typescript-boilerplate)
