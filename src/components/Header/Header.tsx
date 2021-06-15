@@ -1,4 +1,5 @@
 import React, { ChangeEvent, useState } from 'react';
+import { HashRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import PinterestIcon from '@material-ui/icons/Pinterest';
@@ -20,69 +21,76 @@ export default function Header() {
         setSearchValue(e.target.value);
     };
     return (
-        <NavContainer>
-            <NavButtons>
-                <a href="/">
-                    <PinterestIcon htmlColor="red" fontSize="large" />
-                </a>
-            </NavButtons>
-            <HomeLink>Home</HomeLink>
-            <SearchContainer>
-                <SearchBar
-                    type="search"
-                    value={searchValue}
-                    placeholder="Search"
-                    onChange={changeHandler}
-                ></SearchBar>
-            </SearchContainer>
+        <Router>
+            <NavContainer>
+                <NavButtons>
+                    <a href="/">
+                        <PinterestIcon htmlColor="red" fontSize="large" />
+                    </a>
+                </NavButtons>
 
-            <NavButtons>
-                <NotificationsIcon
-                    htmlColor="black"
-                    fontSize="large"
-                    onClick={handleOpen}
-                />
-                <Dialog
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="simple-modal-title"
-                    aria-describedby="simple-modal-description"
-                >
-                    <DialogPopup>
-                        Hello!
-                        <br />
-                        This is a mock up of Pinterest in order to display an
-                        infinite-scroll feature.
-                        <br />
-                        You can scroll down indefinitely and see pictures of
-                        adorable felines!
-                    </DialogPopup>
-                </Dialog>
-            </NavButtons>
-            <NavButtons>
-                <a href="http://mleng.dev/" target="_blank" rel="noreferrer">
-                    <MessageIcon htmlColor="black" fontSize="large" />
-                </a>
-            </NavButtons>
-            <NavButtons>
-                <a
-                    href="https://www.linkedin.com/in/matthew-leng/"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <AccountCircleIcon htmlColor="black" fontSize="large" />
-                </a>
-            </NavButtons>
-            <NavButtons>
-                <a
-                    href="https://github.com/Mleng89/TTP-Pinterest"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <ExpandMoreIcon htmlColor="black" fontSize="large" />
-                </a>
-            </NavButtons>
-        </NavContainer>
+                <HomeLink>Home</HomeLink>
+                <SearchContainer>
+                    <SearchBar
+                        type="search"
+                        value={searchValue}
+                        placeholder="Search"
+                        onChange={changeHandler}
+                    ></SearchBar>
+                </SearchContainer>
+
+                <NavButtons>
+                    <NotificationsIcon
+                        htmlColor="black"
+                        fontSize="large"
+                        onClick={handleOpen}
+                    />
+                    <Dialog
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="simple-modal-title"
+                        aria-describedby="simple-modal-description"
+                    >
+                        <DialogPopup>
+                            Hello!
+                            <br />
+                            This is a mock up of Pinterest in order to display
+                            an infinite-scroll feature.
+                            <br />
+                            You can scroll down indefinitely and see pictures of
+                            adorable felines!
+                        </DialogPopup>
+                    </Dialog>
+                </NavButtons>
+                <NavButtons>
+                    <a
+                        href="http://mleng.dev/"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <MessageIcon htmlColor="black" fontSize="large" />
+                    </a>
+                </NavButtons>
+                <NavButtons>
+                    <a
+                        href="https://www.linkedin.com/in/matthew-leng/"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <AccountCircleIcon htmlColor="black" fontSize="large" />
+                    </a>
+                </NavButtons>
+                <NavButtons>
+                    <a
+                        href="https://github.com/Mleng89/TTP-Pinterest"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <ExpandMoreIcon htmlColor="black" fontSize="large" />
+                    </a>
+                </NavButtons>
+            </NavContainer>
+        </Router>
     );
 }
 const NavContainer = styled.div`
