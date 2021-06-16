@@ -62,6 +62,7 @@ Open your browser and type in: http://localhost:3000/#/
 
 > Issues: Deciding how to implement logic of infinite scroll into code. Initially had a bug where on page load, the `json` file would duplicate and instead of having 48 items, the page would be populated with 96. Then once the window is scrolled to the bottom, loading of new `json` data would populate twice. At times when the user did not move the scroll bar, the `InfiniteScroll` function would trigger two or three times. Soon figured it was the boolean logic in the `main.tsx` file. Passing in true into `onLoad` was the issue as it would constantly trigger.
 
+> Other possible implementation: Another way would be to use the [intersection observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) instead of tracking the scroll on the window.
 
 ## Author
 Matthew Leng |
