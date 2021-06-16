@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 
 type Props = {
-    onBottom: () => void;
+    atBottom: () => void;
     isLoading: boolean;
     hasMoreData: boolean;
     onLoad: boolean;
@@ -16,7 +16,7 @@ function isBottom(ref: React.RefObject<HTMLDivElement>) {
     return currPos.bottom <= window.innerHeight;
 }
 const InfiniteScroll: React.FC<Props> = ({
-    onBottom,
+    atBottom,
     isLoading,
     hasMoreData,
     onLoad,
@@ -27,21 +27,21 @@ const InfiniteScroll: React.FC<Props> = ({
 
     useEffect(() => {
         if (onLoad && initialLoad) {
-            onBottom();
+            atBottom();
             setInitialLoad(false);
         }
-    }, [onBottom, onLoad, initialLoad]);
+    }, [atBottom, onLoad, initialLoad]);
 
     //This allows us to know when we have reached the bottom of the page to run the function passed into onBottom
     useEffect(() => {
         const onScroll = () => {
             if (!isLoading && hasMoreData && isBottom(contentRef)) {
-                onBottom();
+                atBottom();
             }
         };
         document.addEventListener('scroll', onScroll);
         return () => document.removeEventListener('scroll', onScroll);
-    }, [onBottom, isLoading, hasMoreData]);
+    }, [atBottom, isLoading, hasMoreData]);
 
     return <div ref={contentRef}>{children}</div>;
 };

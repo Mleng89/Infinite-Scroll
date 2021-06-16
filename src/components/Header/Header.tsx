@@ -7,7 +7,8 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MessageIcon from '@material-ui/icons/Message';
 import Dialog from '@material-ui/core/Dialog';
-export default function Header() {
+
+const Header: React.FC = () => {
     const [searchValue, setSearchValue] = useState('');
     const [open, setOpen] = useState(false);
     const handleOpen = () => {
@@ -61,6 +62,7 @@ export default function Header() {
                             adorable felines!
                         </DialogPopup>
                     </Dialog>
+                    Info
                 </NavButtons>
                 <NavButtons>
                     <a
@@ -70,6 +72,7 @@ export default function Header() {
                     >
                         <MessageIcon htmlColor="black" fontSize="large" />
                     </a>
+                    Messages
                 </NavButtons>
                 <NavButtons>
                     <a
@@ -79,6 +82,7 @@ export default function Header() {
                     >
                         <AccountCircleIcon htmlColor="black" fontSize="large" />
                     </a>
+                    User
                 </NavButtons>
                 <NavButtons>
                     <a
@@ -88,11 +92,13 @@ export default function Header() {
                     >
                         <ExpandMoreIcon htmlColor="black" fontSize="large" />
                     </a>
+                    More
                 </NavButtons>
             </NavContainer>
         </Router>
     );
-}
+};
+export default Header;
 const NavContainer = styled.div`
     padding: 12px 4px 4px 16px;
     height: 50px;
