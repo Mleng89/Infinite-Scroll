@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState } from 'react';
 import Data from '../../data/nyc_ttp_pins.json';
 import Header from '../Header';
 import Card from '../Card';
