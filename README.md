@@ -8,6 +8,8 @@ When arriving at the website, you are shown a sticky navbar. The bell icon will 
 
 You are able to scroll down the website and once you reach the bottom of the page, more cat/pins will populate the screen. You will be able to scroll down infinitely with the same 48 images of felines, but it will be randomized each time! :smile_cat:
 
+As you are scrolling, you can also click on each image for the original sized image. As you click on the image, a modal pop up will trigger holding the image inside the box.
+
 **Prompt**: Pinterest is one of the most well-designed applications on the web that has you scrolling for hours! We’d love for you to implement this infinite scroll feature. Given a static dataset (JSON) of Pinterest Pins, design and implement a page that shows all the pins and allows infinite scrolling, reusing the Pins as needed. The implementation should be done in a modular way so that the rendering of Pins could be easily reused in other pages and this page could be given other widgets to arrange on the page and support infinite scrolling.
 
 ## Demo
