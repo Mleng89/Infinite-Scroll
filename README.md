@@ -13,7 +13,7 @@ As you are scrolling, you can also click on each image for the original sized im
 **Prompt**: Pinterest is one of the most well-designed applications on the web that has you scrolling for hours! We’d love for you to implement this infinite scroll feature. Given a static dataset (JSON) of Pinterest Pins, design and implement a page that shows all the pins and allows infinite scrolling, reusing the Pins as needed. The implementation should be done in a modular way so that the rendering of Pins could be easily reused in other pages and this page could be given other widgets to arrange on the page and support infinite scrolling.
 
 ## Demo
-![Demo](https://github.com/Mleng89/TTP-Pinterest/blob/main/public/References/Demo.gif)
+![Demo](https://github.com/Mleng89/TTP-Pinterest/blob/main/public/References/Demo1.gif)
 
 ## Prerequisites
 Need lastest version of npm in order to run this project
