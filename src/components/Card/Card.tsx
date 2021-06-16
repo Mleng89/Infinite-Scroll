@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Dialog from '@material-ui/core/Modal';
 
-const Card = pin => {
+type Props = {
+    imgUrl: string;
+    title: string;
+};
+const Card: React.FC<Props> = pin => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => {
         setOpen(true);

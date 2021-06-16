@@ -3,10 +3,10 @@ import Data from '../../data/nyc_ttp_pins.json';
 import Header from '../Header';
 import Card from '../Card';
 import styled from 'styled-components';
-import InfiniteScroll from '../InfiniteScroll';
+import InfiniteScroll from '../InfiniteScroll/';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-export default function Main() {
+const Main: React.FC = () => {
     const [pins, setPins] = useState(Data);
     const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(0);
@@ -37,7 +37,7 @@ export default function Main() {
                 <InfiniteScroll
                     hasMoreData={hasMoreData}
                     isLoading={loading}
-                    onBottom={loadMorePins}
+                    atBottom={loadMorePins}
                     onLoad={false}
                 >
                     <div>
@@ -62,7 +62,9 @@ export default function Main() {
             </LoadingAnimate>
         </>
     );
-}
+};
+
+export default Main;
 
 const MainWrapper = styled.div`
     margin-top: 1em;
