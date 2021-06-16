@@ -66,4 +66,4 @@ Matthew Leng |
 
 - Deployed using GitHub Pages: https://mleng89.github.io/TTP-Pinterest/#/
 - Bootstrapped from my [react-typescript-boilerplate](https://github.com/Mleng89/react-typescript-boilerplate)
-- Gathered inspiration from [Pinterest](https://www.pinterest.com/)
+- Gathered inspiration from [Pinterest](https://www.pinterest.com/) with references gathered and saved [here.](https://github.com/Mleng89/TTP-Pinterest/wiki/References)
