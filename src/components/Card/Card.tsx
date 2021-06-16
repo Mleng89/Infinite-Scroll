@@ -1,12 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import Dialog from '@material-ui/core/Modal';
 
 const Card = pin => {
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
     return (
         <PinWrap>
-            <PinCard>
+            <PinCard onClick={handleOpen}>
                 <img src={pin.imgUrl} />
             </PinCard>
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="simple-modal-title"
+                aria-describedby="simple-modal-description"
+            >
+                <DialogPopup>
+                    <DialogTitle>{pin.title}</DialogTitle>
+                    <br />
+                    <img src={pin.imgUrl} />
+                </DialogPopup>
+            </Dialog>
+
             <PinTitle>{pin.title}</PinTitle>
         </PinWrap>
     );
@@ -49,4 +71,20 @@ const PinTitle = styled(PinWrap)`
     &:hover {
         filter: grayscale(100%);
     }
+`;
+const DialogTitle = styled.p`
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    position: absolute;
+    left: 50%;
+    font-size: medium;
+    text-align: center;
+    padding: 1em;
+`;
+const DialogPopup = styled.div`
+    position: absolute;
+    top: 5%;
+    left: 25%;
+    background-color: white;
+    border: 10px white solid;
 `;
