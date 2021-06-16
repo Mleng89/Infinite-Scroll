@@ -4,7 +4,12 @@
 
 Recreating Pinterest to showcase ability to implement an infinite-scroll feature. 
 
-When arriving at the website, you are shown a sticky navbar. The bell icon will give a modal popup that gives a brief description of the website. The chat bubble icon will lead to my portfolio website `https://mleng.dev/`, while the user icon will redirect to my LinkedIn. Lastly, the "more" icon will not give a drop down menu, rather redirect to this GitHub Repo. 
+When arriving at the website, you are shown a sticky navbar. 
+### You must click on the icons, not the text.
+- The bell icon will give a modal popup that gives a brief description of the website. 
+- The chat bubble icon will lead to my portfolio website `https://mleng.dev/`.
+- The user icon will redirect to my LinkedIn.
+- The "more" icon will not give a drop down menu, rather redirect to this GitHub Repo. 
 
 You are able to scroll down the website and once you reach the bottom of the page, more cat/pins will populate the screen. You will be able to scroll down infinitely with the same 48 images of felines, but it will be randomized each time! :smile_cat:
 
