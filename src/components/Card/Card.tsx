@@ -1,6 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Card = pin => {
+    return (
+        <PinWrap>
+            <PinCard>
+                <img src={pin.imgUrl} />
+            </PinCard>
+            <PinTitle>{pin.title}</PinTitle>
+        </PinWrap>
+    );
+};
+
+export default Card;
+
 const PinWrap = styled.div`
     display: inline-flex;
     padding: 8px;
@@ -37,16 +50,3 @@ const PinTitle = styled(PinWrap)`
         filter: grayscale(100%);
     }
 `;
-
-const Card = pin => {
-    return (
-        <PinWrap>
-            <PinCard>
-                <img src={pin.imgUrl} />
-            </PinCard>
-            <PinTitle>{pin.title}</PinTitle>
-        </PinWrap>
-    );
-};
-
-export default Card;
