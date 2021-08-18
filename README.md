@@ -1,4 +1,4 @@
-# NYC TTP Take-Home Coding Challenge
+# Infinite-Scroll (with cats!)
 
 ## 1. Infinite-Scroll Challenge
 
@@ -72,6 +72,6 @@ Matthew Leng |
 
 ## Acknowledgements
 
-- Deployed using GitHub Pages: https://mleng89.github.io/TTP-Pinterest/#/
+- Deployed using GitHub Pages: https://mleng89.github.io/Infinite-Scroll/#/
 - Bootstrapped from my [react-typescript-boilerplate](https://github.com/Mleng89/react-typescript-boilerplate)
 - Gathered inspiration from [Pinterest](https://www.pinterest.com/) with references gathered and saved [here.](https://github.com/Mleng89/TTP-Pinterest/wiki/References)
