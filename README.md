@@ -26,13 +26,14 @@ Need lastest version of npm in order to run this project
 ## Getting started
 ```
 cd Desktop        
-git clone https://github.com/Mleng89/TTP-Pinterest.git         
-cd TTP-Pinterest        
+git clone https://github.com/Mleng89/Infinite-Scroll.git     
+cd Infinite-Scroll        
 code .        
 npm install       
 npm run dev        
 
-Open your browser and type in: http://localhost:3000/#/
+Open your browser and type in: h
+://localhost:3000/#/
 ```
 
 ## Scripts
